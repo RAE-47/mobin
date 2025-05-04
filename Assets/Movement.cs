@@ -13,24 +13,11 @@ public class Movement : MonoBehaviour
     public float GrounCheckRadius;
     public LayerMask GroundMask;
 
-    Rigidbody2D rb;
-
-   void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
     void Update()
     {
         transform.position += Vector3.right * SpeedValues[(int)CurrentSpeed] * Time.deltaTime;
-        if (Input.GetMouseButton(0))
-        {
-            if (OnGround())
-            {
-                rb.velocity = Vector2.zero; 
-                rb.AddForce(Vector2.up * 26.6581f, ForceMode2D.Impulse);
-            }
-                
-        }
+        if (Input.GetMouseButton(0));
+
     }
     bool OnGround() 
     {
