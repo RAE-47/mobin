@@ -22,13 +22,10 @@ public class Movement : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.right * SpeedValues[(int)CurrentSpeed] * Time.deltaTime;
-        if (Input.GetMouseButton(0))
+        if (OnGround() && (Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space)))
         {
-            if (OnGround())
-            {
                 rb.velocity = Vector2.zero; 
                 rb.AddForce(Vector2.up * 26.6581f, ForceMode2D.Impulse);
-            }
                 
         }
     }
